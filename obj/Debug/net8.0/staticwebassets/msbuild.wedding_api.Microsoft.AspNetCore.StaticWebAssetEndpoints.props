@@ -1,0 +1,16 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/wedding_api/qrcodes/6a114d2f42814d5aacc07f609154c1ac.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qrcodes\6a114d2f42814d5aacc07f609154c1ac.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-WebLA8JDIUvGui6q\u002BY4byMz2hDZ9JcVyq2a/IlBhR4A="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"1551"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022WebLA8JDIUvGui6q\u002BY4byMz2hDZ9JcVyq2a/IlBhR4A=\u0022"},{"Name":"Last-Modified","Value":"Tue, 22 Apr 2025 13:31:54 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/wedding_api/qrcodes/6a114d2f42814d5aacc07f609154c1ac.vexe1eecdw.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qrcodes\6a114d2f42814d5aacc07f609154c1ac.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"vexe1eecdw"},{"Name":"integrity","Value":"sha256-WebLA8JDIUvGui6q\u002BY4byMz2hDZ9JcVyq2a/IlBhR4A="},{"Name":"label","Value":"_content/wedding_api/qrcodes/6a114d2f42814d5aacc07f609154c1ac.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1551"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022WebLA8JDIUvGui6q\u002BY4byMz2hDZ9JcVyq2a/IlBhR4A=\u0022"},{"Name":"Last-Modified","Value":"Tue, 22 Apr 2025 13:31:54 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

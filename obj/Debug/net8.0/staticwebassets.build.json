@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "Hash": "A9dPK/o0WR25p2Au+xUxIVL/eVlnPvAO+aVynVb7gZ4=",
+  "Source": "wedding_api",
+  "BasePath": "_content/wedding_api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "wedding_api\\wwwroot",
+      "Source": "wedding_api",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\wedding_api\\wwwroot\\",
+      "BasePath": "_content/wedding_api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\wedding_api\\wwwroot\\qrcodes\\6a114d2f42814d5aacc07f609154c1ac.png",
+      "SourceId": "wedding_api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\wedding_api\\wwwroot\\",
+      "BasePath": "_content/wedding_api",
+      "RelativePath": "qrcodes/6a114d2f42814d5aacc07f609154c1ac#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vexe1eecdw",
+      "Integrity": "WebLA8JDIUvGui6q+Y4byMz2hDZ9JcVyq2a/IlBhR4A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\qrcodes\\6a114d2f42814d5aacc07f609154c1ac.png"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "qrcodes/6a114d2f42814d5aacc07f609154c1ac.png",
+      "AssetFile": "C:\\Users\\Lenovo\\source\\repos\\wedding_api\\wwwroot\\qrcodes\\6a114d2f42814d5aacc07f609154c1ac.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1551"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WebLA8JDIUvGui6q+Y4byMz2hDZ9JcVyq2a/IlBhR4A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 13:31:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WebLA8JDIUvGui6q+Y4byMz2hDZ9JcVyq2a/IlBhR4A="
+        }
+      ]
+    },
+    {
+      "Route": "qrcodes/6a114d2f42814d5aacc07f609154c1ac.vexe1eecdw.png",
+      "AssetFile": "C:\\Users\\Lenovo\\source\\repos\\wedding_api\\wwwroot\\qrcodes\\6a114d2f42814d5aacc07f609154c1ac.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1551"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WebLA8JDIUvGui6q+Y4byMz2hDZ9JcVyq2a/IlBhR4A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 13:31:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vexe1eecdw"
+        },
+        {
+          "Name": "label",
+          "Value": "qrcodes/6a114d2f42814d5aacc07f609154c1ac.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WebLA8JDIUvGui6q+Y4byMz2hDZ9JcVyq2a/IlBhR4A="
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\wedding_api\\wwwroot\\qrcodes\\6a114d2f42814d5aacc07f609154c1ac.png",
+      "PackagePath": "staticwebassets\\qrcodes\\6a114d2f42814d5aacc07f609154c1ac.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.wedding_api.props",
+      "PackagePath": "build\\wedding_api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.wedding_api.props",
+      "PackagePath": "buildMultiTargeting\\wedding_api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.wedding_api.props",
+      "PackagePath": "buildTransitive\\wedding_api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.wedding_api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.wedding_api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

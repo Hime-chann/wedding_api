@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\wedding_api.props" />
+</Project>
