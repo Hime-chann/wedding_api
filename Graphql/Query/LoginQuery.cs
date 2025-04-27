@@ -17,10 +17,10 @@ public class LoginQuery
         _loginService = loginService;
     }
 
-
-
     public async Task<Responses> LoginEmail(string email, string password)
     {
         return await _loginService.AuthenticateUserAsync(email, password);
     }
 }
+
+

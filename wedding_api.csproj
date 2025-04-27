@@ -10,6 +10,8 @@
 	<ItemGroup>
 		<PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
 		<PackageReference Include="Dapper" Version="2.1.66" />
+		<PackageReference Include="Google.Apis.Auth" Version="1.69.0" />
+		<PackageReference Include="Google.Apis.Drive.v3" Version="1.69.0.3740" />
 		<!-- Align HotChocolate versions to avoid conflicts -->
 		<PackageReference Include="GreenDonut" Version="15.1.3" />
 		<PackageReference Include="HotChocolate" Version="15.1.3" />
@@ -19,7 +21,7 @@
 		<PackageReference Include="HotChocolate.Data.EntityFramework" Version="15.1.3" />
 		<PackageReference Include="HotChocolate.Types" Version="15.1.3" />
 		<PackageReference Include="HotChocolate.Types.Scalars" Version="15.0.3" />
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.12" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.0" />
 		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.12" />
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.1" />
@@ -34,11 +36,13 @@
 		<PackageReference Include="Scalar.AspNetCore" Version="2.0.12" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
 		<PackageReference Include="System.Drawing.Common" Version="9.0.4" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.9.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Folder Include="Data Layer\Interface\" />
 		<Folder Include="Migrations\" />
+		<Folder Include="wwwroot\qrcodes\" />
 	</ItemGroup>
 
 	<ItemGroup>

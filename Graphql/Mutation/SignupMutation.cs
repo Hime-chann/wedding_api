@@ -10,6 +10,11 @@ using wedding_api.Models;
 using wedding_api.Services.AdminServices;
 
 
+using System.Threading.Tasks;
+using HotChocolate;
+
+
+
 namespace wedding_api.GraphQL;
 
 [ExtendObjectType("Mutation")]
@@ -38,15 +43,15 @@ public class SignupMutation
         string hashedPassword = passwordService.HashPassword(input.Password);
 
         // Create New User
-        var admin = new Admin
+        var weddingAccount = new Admin
         {
             Email = input.Email,
             PasswordHash = passwordService.HashPassword(input.Password),
         };
 
-        db.Admins.Add(admin);
+        db.Admins.Add(weddingAccount);
         await db.SaveChangesAsync();
-        return admin; // Return the created user object
+        return weddingAccount; // Return the created user object
     }
 
 

@@ -1,22 +1,112 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qrcodes\6a114d2f42814d5aacc07f609154c1ac.png'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qrcodes\27f94b8505994acc84165e39088d9651.png'))">
       <SourceType>Package</SourceType>
       <SourceId>wedding_api</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/wedding_api</BasePath>
-      <RelativePath>qrcodes/6a114d2f42814d5aacc07f609154c1ac.png</RelativePath>
+      <RelativePath>qrcodes/27f94b8505994acc84165e39088d9651.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>vexe1eecdw</Fingerprint>
-      <Integrity>WebLA8JDIUvGui6q+Y4byMz2hDZ9JcVyq2a/IlBhR4A=</Integrity>
+      <Fingerprint>t5l43wkir9</Fingerprint>
+      <Integrity>IWfBv66jm2Jcmx2gNoMdRepo8oyh6OVhQ39ojSaVYuw=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qrcodes\6a114d2f42814d5aacc07f609154c1ac.png'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qrcodes\27f94b8505994acc84165e39088d9651.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qrcodes\697181bc7dbb4342b510e4028c2730df.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>wedding_api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/wedding_api</BasePath>
+      <RelativePath>qrcodes/697181bc7dbb4342b510e4028c2730df.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>fn3p6stty4</Fingerprint>
+      <Integrity>RVsGU0A09gatI0gOYXRjh6Bi1Rb+WN8UTZ9ZPPB1N40=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qrcodes\697181bc7dbb4342b510e4028c2730df.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qrcodes\b3b5d01501424e1398dbbfccd75955f2.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>wedding_api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/wedding_api</BasePath>
+      <RelativePath>qrcodes/b3b5d01501424e1398dbbfccd75955f2.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2um4ymiitt</Fingerprint>
+      <Integrity>mmZVDuCRsgF3y9FBd9p6ssI185A0Lvl2UJrtunhqFX0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qrcodes\b3b5d01501424e1398dbbfccd75955f2.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qrcodes\b3bb852e87794903976ff033a8588d9d.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>wedding_api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/wedding_api</BasePath>
+      <RelativePath>qrcodes/b3bb852e87794903976ff033a8588d9d.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>g9gypibhhc</Fingerprint>
+      <Integrity>1LcB3L12UUAH84ztS1+Ff8PaoWK0FUj1bD80GGY2UJQ=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qrcodes\b3bb852e87794903976ff033a8588d9d.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qrcodes\d1ddb3e836864e69bffe2b56809ef0c7.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>wedding_api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/wedding_api</BasePath>
+      <RelativePath>qrcodes/d1ddb3e836864e69bffe2b56809ef0c7.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>4m1ho1qi44</Fingerprint>
+      <Integrity>bP7pEeRTCB0ul+ZvTnYyX45JVACFOCkYvz+3TdsPHMw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qrcodes\d1ddb3e836864e69bffe2b56809ef0c7.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qrcodes\e241dc4e5d5d4732b0141c8400378b80.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>wedding_api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/wedding_api</BasePath>
+      <RelativePath>qrcodes/e241dc4e5d5d4732b0141c8400378b80.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ehkfkdseou</Fingerprint>
+      <Integrity>jsKclrrd/IDuM2R4s+V3hTD94GPGybKiV2MCMrnrW1o=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qrcodes\e241dc4e5d5d4732b0141c8400378b80.png'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

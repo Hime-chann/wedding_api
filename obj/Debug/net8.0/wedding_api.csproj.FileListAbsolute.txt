@@ -1,5 +1,6 @@
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\appsettings.json
+C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\wedding_api.staticwebassets.runtime.json
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\wedding_api.staticwebassets.endpoints.json
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\wedding_api.exe
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\wedding_api.deps.json
@@ -11,6 +12,10 @@ C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\ChilliCream.Nitro.App.dll
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\Dapper.dll
+C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\Google.Apis.dll
+C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\Google.Apis.Auth.dll
+C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\Google.Apis.Core.dll
+C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\Google.Apis.Drive.v3.dll
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\GreenDonut.dll
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\GreenDonut.Abstractions.dll
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\GreenDonut.Data.dll
@@ -56,6 +61,7 @@ C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\Microsoft.AspNetCore.A
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\Microsoft.Bcl.Cryptography.dll
+C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
@@ -105,6 +111,7 @@ C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\System.Drawing.Common.
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\System.Private.Windows.Core.dll
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\System.IO.Hashing.dll
+C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\System.Management.dll
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\System.Memory.Data.dll
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
@@ -181,6 +188,7 @@ C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\runtimes\win-x64\nativ
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
 C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\Lenovo\source\repos\wedding_api\obj\Debug\net8.0\wedding_api.csproj.AssemblyReference.cache
 C:\Users\Lenovo\source\repos\wedding_api\obj\Debug\net8.0\wedding_api.GeneratedMSBuildEditorConfig.editorconfig
@@ -189,6 +197,7 @@ C:\Users\Lenovo\source\repos\wedding_api\obj\Debug\net8.0\wedding_api.AssemblyIn
 C:\Users\Lenovo\source\repos\wedding_api\obj\Debug\net8.0\wedding_api.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\source\repos\wedding_api\obj\Debug\net8.0\wedding_api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Lenovo\source\repos\wedding_api\obj\Debug\net8.0\wedding_api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Lenovo\source\repos\wedding_api\obj\Debug\net8.0\wedding_api.sourcelink.json
 C:\Users\Lenovo\source\repos\wedding_api\obj\Debug\net8.0\scopedcss\bundle\wedding_api.styles.css
 C:\Users\Lenovo\source\repos\wedding_api\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Lenovo\source\repos\wedding_api\obj\Debug\net8.0\staticwebassets.development.json
@@ -206,4 +215,3 @@ C:\Users\Lenovo\source\repos\wedding_api\obj\Debug\net8.0\wedding_api.pdb
 C:\Users\Lenovo\source\repos\wedding_api\obj\Debug\net8.0\wedding_api.genruntimeconfig.cache
 C:\Users\Lenovo\source\repos\wedding_api\obj\Debug\net8.0\ref\wedding_api.dll
 C:\Users\Lenovo\source\repos\wedding_api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-C:\Users\Lenovo\source\repos\wedding_api\bin\Debug\net8.0\wedding_api.staticwebassets.runtime.json

@@ -1,35 +1,45 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using wedding_api.Models;
 using wedding_api.DTOs;
+using wedding_api.Models;
+using System;
+using System.Threading.Tasks;
 
 namespace wedding_api.Services.AdminServices
 {
     public class CreateStoryService
     {
-        private readonly WedDbContext _db;
+        private readonly IDbContextFactory<WedDbContext> _contextFactory;
 
-        public CreateStoryService(WedDbContext db)
+        public CreateStoryService(IDbContextFactory<WedDbContext> contextFactory)
         {
-            _db = db;
+            _contextFactory = contextFactory;
         }
 
-        public async Task<AdminStoryDTO> CreateStory(int weddingId, AdminStoryDTO dto)
+        public async Task<AdminStoryDTO> CreateStory(int adminId, AdminStoryDTOInput dto)
         {
-            // Automatically detect the media type from the file extension
+            using var _dbContext = _contextFactory.CreateDbContext();
+
+            var wedding = await _dbContext.Weddings
+                .FirstOrDefaultAsync(w => w.AdminId == adminId);
+
+            if (wedding == null)
+                throw new InvalidOperationException("Wedding not found for this admin.");
+
             var mediaType = GetMediaTypeFromFileExtension(dto.FileUrl);
 
             var story = new AdminStory
             {
-                WeddingId = weddingId,
+                AdminId = adminId,
+                WeddingId = wedding.WeddingId,
                 Title = dto.Title,
                 Description = dto.Description,
                 FileUrl = dto.FileUrl,
-                MediaType = mediaType, // Automatically assigned based on file extension
+                MediaType = mediaType,
                 UploadedAt = DateTime.UtcNow
             };
 
-            _db.AdminStories.Add(story);
-            await _db.SaveChangesAsync();
+            _dbContext.AdminStories.Add(story);
+            await _dbContext.SaveChangesAsync();
 
             return new AdminStoryDTO
             {
@@ -38,28 +48,23 @@ namespace wedding_api.Services.AdminServices
                 Title = story.Title,
                 Description = story.Description,
                 FileUrl = story.FileUrl,
+                MediaType = story.MediaType,
                 UploadedAt = story.UploadedAt
             };
         }
 
         private string GetMediaTypeFromFileExtension(string fileUrl)
         {
-            var fileExtension = System.IO.Path.GetExtension(fileUrl).ToLower();
-
-            switch (fileExtension)
+            var extension = System.IO.Path.GetExtension(fileUrl)?.ToLower();
+            return extension switch
             {
-                case ".mp4":
-                    return "video/mp4";
-                case ".mp3":
-                    return "audio/mp3";
-                case ".jpg":
-                case ".jpeg":
-                    return "image/jpeg";
-                case ".png":
-                    return "image/png";
-                default:
-                    return "application/octet-stream"; // Fallback type
-            }
+                ".mp4" => "video/mp4",
+                ".mp3" => "audio/mp3",
+                ".jpg" => "image/jpeg",
+                ".jpeg" => "image/jpeg",
+                ".png" => "image/png",
+                _ => "application/octet-stream"
+            };
         }
     }
 }

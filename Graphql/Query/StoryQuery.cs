@@ -14,10 +14,10 @@ namespace wedding_api.GraphQL.Queries
             _db = db;
         }
 
-        public async Task<List<AdminStory>> GetStoriesByWeddingId(int weddingId)
+        public async Task<List<AdminStory>> GetStoriesByWeddingId(int adminId)
         {
             return await _db.AdminStories
-                .Where(s => s.WeddingId == weddingId)
+                .Where(s => s.AdminId == adminId)
                 .ToListAsync();
         }
     }

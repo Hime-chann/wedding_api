@@ -1,8 +1,28 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\wedding_api\\wwwroot\\qrcodes\\6a114d2f42814d5aacc07f609154c1ac.png",
-      "PackagePath": "staticwebassets\\qrcodes\\6a114d2f42814d5aacc07f609154c1ac.png"
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\wedding_api\\wwwroot\\qrcodes\\27f94b8505994acc84165e39088d9651.png",
+      "PackagePath": "staticwebassets\\qrcodes\\27f94b8505994acc84165e39088d9651.png"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\wedding_api\\wwwroot\\qrcodes\\697181bc7dbb4342b510e4028c2730df.png",
+      "PackagePath": "staticwebassets\\qrcodes\\697181bc7dbb4342b510e4028c2730df.png"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\wedding_api\\wwwroot\\qrcodes\\b3b5d01501424e1398dbbfccd75955f2.png",
+      "PackagePath": "staticwebassets\\qrcodes\\b3b5d01501424e1398dbbfccd75955f2.png"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\wedding_api\\wwwroot\\qrcodes\\b3bb852e87794903976ff033a8588d9d.png",
+      "PackagePath": "staticwebassets\\qrcodes\\b3bb852e87794903976ff033a8588d9d.png"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\wedding_api\\wwwroot\\qrcodes\\d1ddb3e836864e69bffe2b56809ef0c7.png",
+      "PackagePath": "staticwebassets\\qrcodes\\d1ddb3e836864e69bffe2b56809ef0c7.png"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\wedding_api\\wwwroot\\qrcodes\\e241dc4e5d5d4732b0141c8400378b80.png",
+      "PackagePath": "staticwebassets\\qrcodes\\e241dc4e5d5d4732b0141c8400378b80.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.wedding_api.props",

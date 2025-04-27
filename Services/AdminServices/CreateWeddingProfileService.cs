@@ -1,79 +1,78 @@
-﻿//CreateWeddingProfileService.cs
-//Admin Second flow: Wedding Creation
-
-
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using wedding_api.DTOs;
+using wedding_api.DTOs.wedding_api.DTOs;
 using wedding_api.Models;
 
 namespace wedding_api.Services.AdminServices
 {
     public class CreateWeddingProfileService
     {
-        private readonly WedDbContext _dbContext;
+        private readonly IDbContextFactory<WedDbContext> _contextFactory;
         private readonly GenerateQrcodeService _qrService;
 
-        public CreateWeddingProfileService(WedDbContext dbContext, GenerateQrcodeService qrService)
+        public CreateWeddingProfileService(IDbContextFactory<WedDbContext> contextFactory, GenerateQrcodeService qrService)
         {
-            _dbContext = dbContext;
+            _contextFactory = contextFactory;
             _qrService = qrService;
         }
 
-        public async Task<WeddingProfile> CreateWedding(WeddingProfileDTO weddingDTO)
+        public async Task<WeddingProfile> CreateWedding(int adminId, WeddingProfileDTO dto)
         {
-            // Validate Admin exists
-            var adminExists = await _dbContext.Admins
-        .AnyAsync(a => a.AdminId == weddingDTO.AdminId); // "AdminID" matches model
-            if (!adminExists)
-            {
-                throw new ArgumentException("Invalid AdminId. Admin does not exist.");
-            }
+            using var dbContext = _contextFactory.CreateDbContext();
 
-            // Validate required fields
-            if (string.IsNullOrWhiteSpace(weddingDTO.EventTitle))
-                throw new ArgumentException("EventTitle is required.");
-            if (string.IsNullOrWhiteSpace(weddingDTO.BrideName))
-                throw new ArgumentException("BrideName is required.");
-            if (string.IsNullOrWhiteSpace(weddingDTO.GroomName))
-                throw new ArgumentException("GroomName is required.");
-            if (weddingDTO.WeddingDate == default)
-                throw new ArgumentException("WeddingDate is required.");
+            if (!await dbContext.Admins.AnyAsync(a => a.AdminId == adminId))
+                throw new ArgumentException("Invalid AdminId.");
+
+            bool hasExistingWedding = await dbContext.Weddings.AnyAsync(w => w.AdminId == adminId);
+            if (hasExistingWedding)
+                throw new InvalidOperationException("This admin already has a wedding profile.");
 
             var wedding = new WeddingProfile
             {
-                AdminId = weddingDTO.AdminId,
-                EventTitle = weddingDTO.EventTitle,
-                BrideName = weddingDTO.BrideName,
-                GroomName = weddingDTO.GroomName,
-                WeddingDate = weddingDTO.WeddingDate,
-                EventPictureUrl = weddingDTO.EventPictureUrl,
-                BackgroundPictureUrl = weddingDTO.BackgroundPictureUrl,
-                Bio = weddingDTO.Bio,
+                AdminId = adminId,
+                EventTitle = dto.EventTitle,
+                BrideName = dto.BrideName,
+                GroomName = dto.GroomName,
+                WeddingDate = dto.WeddingDate,
+                EventPictureUrl = dto.EventPictureUrl,
+                BackgroundPictureUrl = dto.BackgroundPictureUrl,
+                Bio = dto.Bio,
                 QrCodeHash = Guid.NewGuid().ToString("N"),
                 CreatedAt = DateTime.UtcNow
             };
 
-            // ⬇ Generate QR Code before adding to DB
             var tempWedding = new WeddingProfile { QrCodeHash = wedding.QrCodeHash };
             wedding.QrCodeImageUrl = await _qrService.GenerateAndStoreQrCode(tempWedding);
 
-            _dbContext.Weddings.Add(wedding);
-            await _dbContext.SaveChangesAsync();
+            dbContext.Weddings.Add(wedding);
+            await dbContext.SaveChangesAsync();
 
             return wedding;
         }
 
-
-
         public async Task<WeddingProfile> GetWeddingByQrCodeHash(string qrCodeHash)
         {
-            return await _dbContext.Weddings
+            using var dbContext = _contextFactory.CreateDbContext();
+
+            return await dbContext.Weddings
                 .FirstOrDefaultAsync(w => w.QrCodeHash == qrCodeHash);
+        }
+
+        public async Task<WeddingProfile> GetWeddingByFullQrCodeUrl(string qrCodeUrl)
+        {
+            using var dbContext = _contextFactory.CreateDbContext();
+
+            var uri = new Uri(qrCodeUrl);
+            var hash = System.IO.Path.GetFileNameWithoutExtension(uri.AbsolutePath);
+            return await dbContext.Weddings
+                .FirstOrDefaultAsync(w => w.QrCodeHash == hash);
         }
 
         public async Task<List<WeddingProfile>> GetAllWeddings()
         {
-            return await _dbContext.Weddings.ToListAsync();
+            using var dbContext = _contextFactory.CreateDbContext();
+
+            return await dbContext.Weddings.ToListAsync();
         }
     }
 }

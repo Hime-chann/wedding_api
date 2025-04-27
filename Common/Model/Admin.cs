@@ -13,16 +13,17 @@ namespace wedding_api.Models
         public int AdminId { get; set; }
 
         [Required]
-        public string PasswordHash { get; set; }
-
-        [Required]
         [EmailAddress]
         public string Email { get; set; }
 
         [Required]
+        public string PasswordHash { get; set; }
+
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-        // Navigation property for weddings created by this admin
-        public ICollection<WeddingProfile> Weddings { get; set; }
+        public string? Token { get; set; }
+
+        // One Admin has ONE WeddingProfile
+        public WeddingProfile WeddingProfile { get; set; }
     }
 }

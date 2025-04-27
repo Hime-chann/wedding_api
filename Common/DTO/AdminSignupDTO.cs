@@ -12,3 +12,4 @@ namespace wedding_api.DTOs
         public string Password { get; set; } // Plaintext before hashing
     }
 }
+

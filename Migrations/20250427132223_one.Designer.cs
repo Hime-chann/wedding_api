@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace wedding_api.Migrations
 {
     [DbContext(typeof(WedDbContext))]
-    [Migration("20250415162316_InitTables")]
-    partial class InitTables
+    [Migration("20250427132223_one")]
+    partial class one
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,6 +43,9 @@ namespace wedding_api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Token")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("AdminId");
 
                     b.ToTable("Admins");
@@ -55,6 +58,9 @@ namespace wedding_api.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StoryId"));
+
+                    b.Property<int>("AdminId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -80,6 +86,8 @@ namespace wedding_api.Migrations
 
                     b.HasKey("StoryId");
 
+                    b.HasIndex("AdminId");
+
                     b.HasIndex("WeddingId");
 
                     b.ToTable("AdminStories");
@@ -87,11 +95,11 @@ namespace wedding_api.Migrations
 
             modelBuilder.Entity("wedding_api.Models.GeneralMediaUploading", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("MediaId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MediaId"));
 
                     b.Property<string>("ContentUrl")
                         .IsRequired()
@@ -111,7 +119,7 @@ namespace wedding_api.Migrations
                     b.Property<int>("WeddingId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("MediaId");
 
                     b.HasIndex("WeddingId");
 
@@ -120,11 +128,11 @@ namespace wedding_api.Migrations
 
             modelBuilder.Entity("wedding_api.Models.StoryReaction", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ReactionId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReactionId"));
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -137,36 +145,31 @@ namespace wedding_api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("StoryMediaId")
+                    b.Property<int>("StoryId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("StoryReactionId")
-                        .HasColumnType("int");
+                    b.HasKey("ReactionId");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("StoryReactionId");
+                    b.HasIndex("StoryId");
 
                     b.ToTable("Reactions");
                 });
 
             modelBuilder.Entity("wedding_api.Models.WeddingProfile", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("WeddingId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WeddingId"));
 
                     b.Property<int>("AdminId")
                         .HasColumnType("int");
 
                     b.Property<string>("BackgroundPictureUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Bio")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("BrideName")
@@ -177,7 +180,6 @@ namespace wedding_api.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("EventPictureUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EventTitle")
@@ -193,26 +195,34 @@ namespace wedding_api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("QrCodeImageUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("WeddingDate")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("Id");
+                    b.HasKey("WeddingId");
 
-                    b.HasIndex("AdminId");
+                    b.HasIndex("AdminId")
+                        .IsUnique();
 
                     b.ToTable("Weddings");
                 });
 
             modelBuilder.Entity("wedding_api.Models.AdminStory", b =>
                 {
-                    b.HasOne("wedding_api.Models.WeddingProfile", "Wedding")
+                    b.HasOne("wedding_api.Models.Admin", "Admin")
                         .WithMany()
+                        .HasForeignKey("AdminId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("wedding_api.Models.WeddingProfile", "Wedding")
+                        .WithMany("Stories")
                         .HasForeignKey("WeddingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Admin");
 
                     b.Navigation("Wedding");
                 });
@@ -220,7 +230,7 @@ namespace wedding_api.Migrations
             modelBuilder.Entity("wedding_api.Models.GeneralMediaUploading", b =>
                 {
                     b.HasOne("wedding_api.Models.WeddingProfile", "Wedding")
-                        .WithMany("GenMedia")
+                        .WithMany("GeneralMediaUploads")
                         .HasForeignKey("WeddingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -230,17 +240,21 @@ namespace wedding_api.Migrations
 
             modelBuilder.Entity("wedding_api.Models.StoryReaction", b =>
                 {
-                    b.HasOne("wedding_api.Models.StoryReaction", null)
-                        .WithMany("Reactions")
-                        .HasForeignKey("StoryReactionId");
+                    b.HasOne("wedding_api.Models.AdminStory", "Story")
+                        .WithMany("StoryReactions")
+                        .HasForeignKey("StoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Story");
                 });
 
             modelBuilder.Entity("wedding_api.Models.WeddingProfile", b =>
                 {
                     b.HasOne("wedding_api.Models.Admin", "Admin")
-                        .WithMany("Weddings")
-                        .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .WithOne("WeddingProfile")
+                        .HasForeignKey("wedding_api.Models.WeddingProfile", "AdminId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Admin");
@@ -248,17 +262,20 @@ namespace wedding_api.Migrations
 
             modelBuilder.Entity("wedding_api.Models.Admin", b =>
                 {
-                    b.Navigation("Weddings");
+                    b.Navigation("WeddingProfile")
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("wedding_api.Models.StoryReaction", b =>
+            modelBuilder.Entity("wedding_api.Models.AdminStory", b =>
                 {
-                    b.Navigation("Reactions");
+                    b.Navigation("StoryReactions");
                 });
 
             modelBuilder.Entity("wedding_api.Models.WeddingProfile", b =>
                 {
-                    b.Navigation("GenMedia");
+                    b.Navigation("GeneralMediaUploads");
+
+                    b.Navigation("Stories");
                 });
 #pragma warning restore 612, 618
         }

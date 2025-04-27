@@ -17,16 +17,16 @@ namespace wedding_api.Services
             _dbContext = dbContext;
         }
 
-        public async Task<StoryReaction> AddReaction(int storyMediaId, string reactionType, string sessionHash)
+        public async Task<StoryReaction> AddReaction(int storyId, string reactionType, string sessionHash)
         {
             var existing = await _dbContext.Reactions
-                .AnyAsync(r => r.StoryMediaId == storyMediaId && r.SessionHash == sessionHash);
+                .AnyAsync(r => r.StoryId == storyId && r.SessionHash == sessionHash);
 
             if (existing) throw new Exception("Already reacted");
 
             var reaction = new StoryReaction
             {
-                StoryMediaId = storyMediaId,
+                StoryId = storyId,
                 ReactionType = reactionType,
                 SessionHash = sessionHash,
                 CreatedAt = DateTime.UtcNow
@@ -41,18 +41,18 @@ namespace wedding_api.Services
         public async Task<List<StoryReaction>> GetReactionsForStoryMedia(int storyMediaId)
         {
             return await _dbContext.Reactions
-                .Where(r => r.StoryMediaId == storyMediaId)
+                .Where(r => r.StoryId == storyMediaId)
                 .ToListAsync();
         }
 
         public async Task<ReactionCountDTO> GetReactionCountDTO(int storyMediaId)
         {
             var count = await _dbContext.Reactions
-                .CountAsync(r => r.StoryMediaId == storyMediaId && r.ReactionType.ToLower() == "heart");
+                .CountAsync(r => r.StoryId == storyMediaId && r.ReactionType.ToLower() == "heart");
 
             return new ReactionCountDTO
             {
-                StoryMediaId = storyMediaId,
+                StoryId = storyMediaId,
                 HeartCount = count
             };
         }
